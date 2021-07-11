@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành Switch-cases</title>
+</head>
+<body>
+
+<script>
+    function bai1() {
+        let browser = prompt("Enter your browser:",'').toLowerCase();
+        switch (browser) {
+            case 'edge':
+                alert("You've got Edge!");
+                break;
+            case 'chrome':
+            case 'firefox':
+            case 'safari':
+            case 'opera':
+                alert("It's supported as well!");
+                break;
+            default:
+                alert("You don't have any browser, man???");
+                break;
+        }
+    }
+
+    function bai2() {
+        let a = prompt('a?','');
+        switch (a) {
+            case '':
+                alert('Did not enter anything?');
+                break;
+            case '0':
+                alert('0');
+                break;
+            case '1':
+                alert('1');
+                break;
+            case '2':
+            case '3':
+                alert('2,3');
+                break;
+            default:
+                alert('What do you mean?');
+        }
+    }
+
+    function bai3_ifelse() {
+        let inputNumber = prompt('Enter a number:','0');
+        if (inputNumber === '') {
+            alert('Nothing entered!');
+        } else {
+            let number = parseFloat(inputNumber);
+            if (!isNaN(number) ) {
+                if (number > 0) {
+                    alert(1);
+                } else if (number < 0) {
+                    alert(-1);
+                } else {
+                    alert(0);
+                }
+            } else alert("Invalid number!");
+        }
+    }
+
+    function bai3_switchcase (){
+        let inputNumber = prompt('Enter a number:','0');
+        if (inputNumber === '') {
+            alert("Nothing entered!");
+        } else {
+            let number = parseFloat(inputNumber);
+            if (!isNaN(number)) {
+                let numberSign;
+                if (number === 0) {
+                    numberSign = "0";
+                } else if (number > 0) numberSign = "positive";
+                else numberSign = "negative";
+
+                console.log(numberSign);
+                switch (numberSign) {
+                    case "0":
+                        alert('0');
+                        break;
+                    case "positive":
+                        alert('1');
+                        break;
+                    case "negative":
+                        alert('-1');
+                        break;
+                }
+            } else alert('Invalid number!')
+        }
+    }
+</script>
+
+
+<h2>Bài 1</h2>
+<button type="button" onclick="bai1()">Bắt đầu</button>
+<br><br>
+<h2>Bài 2</h2>
+<button type="button" onclick="bai2()">Bắt đầu</button>
+<br><br>
+<h2>Bài 3</h2>
+<button type="button" onclick="bai3_ifelse()">Bắt đầu (if-else script) </button>
+<br><br>
+<button type="button" onclick="bai3_switchcase()"> Bắt đầu (switch-case script)</button>
+</body>
+</html>
